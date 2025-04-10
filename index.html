@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>burakstord</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { background: linear-gradient(120deg, #0f2027, #203a43, #2c5364); color: white; padding: 2rem; }
+    header { text-align: center; margin-bottom: 3rem; animation: fadeIn 2s ease; }
+    header h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+    nav { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; animation: slideIn 2s ease; }
+    nav a { color: #fff; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+    nav a:hover { color: #00ffcc; }
+    .content { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; animation: fadeIn 2s ease; }
+    .card { background-color: rgba(255, 255, 255, 0.1); padding: 1.5rem; border-radius: 1rem; backdrop-filter: blur(10px); transition: transform 0.3s; }
+    .card:hover { transform: translateY(-5px); }
+    footer { text-align: center; margin-top: 3rem; font-size: 0.9rem; color: #ccc; }
+    .social { margin-top: 1rem; }
+    .social a { color: #fff; margin: 0 0.5rem; font-size: 1.5rem; }
+    .toggle-darkmode { position: fixed; bottom: 1rem; right: 1rem; background-color: rgba(255,255,255,0.1); border: none; padding: 0.8rem 1.2rem; border-radius: 1rem; cursor: pointer; color: white; font-weight: bold; }
+    .dark { background: linear-gradient(120deg, #000000, #1a1a1a); color: #eee; }
+    .comment-section { margin-top: 2rem; }
+    .comment-section textarea { width: 100%; padding: 1rem; border-radius: 0.5rem; border: none; resize: none; }
+    .comment-section button { margin-top: 0.5rem; padding: 0.5rem 1rem; border: none; border-radius: 0.5rem; background-color: #00ffcc; color: black; font-weight: bold; cursor: pointer; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideIn { from { transform: translateY(-20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>burakstord</h1>
+    <p>Kişisel Blog</p>
+  </header>
+  <nav>
+    <a href="#gunluk">Günlük</a>
+    <a href="#teknoloji">Teknoloji</a>
+    <a href="#hayat">Hayat</a>
+    <a href="#seyahat">Seyahat</a>
+  </nav>
+  <section class="content">
+    <div class="card" id="gunluk">
+      <h2>Bugün Neler Oldu?</h2>
+      <p>Günlük hayatımdan kısa notlar ve düşünceler burada yer alacak.</p>
+    </div>
+    <div class="card" id="teknoloji">
+      <h2>Teknoloji</h2>
+      <p>Yeni çıkan teknolojiler, yazılım dünyası ve daha fazlası.</p>
+    </div>
+    <div class="card" id="hayat">
+      <h2>Hayata Dair</h2>
+      <p>Felsefi düşünceler, kişisel gelişim ve motivasyon.</p>
+    </div>
+    <div class="card" id="seyahat">
+      <h2>Seyahat Notları</h2>
+      <p>Gezdiğim yerler, deneyimlerim ve önerilerim burada olacak.</p>
+    </div>
+  </section>
+  <section class="comment-section">
+    <h2>Yorum Yap</h2>
+    <textarea rows="4" placeholder="Yorumunuzu yazın..."></textarea><br />
+    <button>Gönder</button>
+  </section>
+  <footer>
+    <p>© 2025 burakstord - Tüm hakları saklıdır.</p>
+    <div class="social">
+      <a href="https://instagram.com/kyokksi" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
+  <button class="toggle-darkmode" onclick="toggleDarkMode()">Koyu/Açık Mod</button>
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>
